@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Genere una contraseña aleatoria y segura al instante</h1>
+            <p>Utilice el generador de contraseñas online para crear al instante una contraseña segura y aleatoria.</p>
+        </header>
+
+        <div class="password-display">
+            <div class="password-container">
+                <span class="password" id="passwordDisplay">:.£WAf3S*o18</span>
+                <button class="copy-btn" id="copyBtn" title="Copiar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
+                <button class="regenerate-btn" id="regenerateBtn" title="Regenerar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="settings-container">
+            <h2>Personalice su contraseña</h2>
+            
+            <div class="length-control">
+                <label for="lengthSlider">Longitud de la contraseña</label>
+                <div class="slider-container">
+                    <input type="number" id="lengthValue" value="12" min="4" max="50">
+                    <input type="range" id="lengthSlider" min="4" max="50" value="12">
+                </div>
+            </div>
+
+            <div class="options-grid">
+                <div class="radio-group">
+                    <input type="radio" id="easyToSay" name="passwordType" value="easyToSay">
+                    <label for="easyToSay">
+                        Fácil de decir
+                        <span class="info-icon" title="Evita números y caracteres especiales">ⓘ</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="uppercase" checked>
+                    <label for="uppercase">Mayúsculas</label>
+                </div>
+
+                <div class="radio-group">
+                    <input type="radio" id="easyToRead" name="passwordType" value="easyToRead">
+                    <label for="easyToRead">
+                        Fácil de leer
+                        <span class="info-icon" title="Evita caracteres ambiguos como l, 1, O, 0">ⓘ</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase">Minúsculas</label>
+                </div>
+
+                <div class="radio-group">
+                    <input type="radio" id="allCharacters" name="passwordType" value="allCharacters" checked>
+                    <label for="allCharacters">
+                        Todos los caracteres
+                        <span class="info-icon" title="Cualquier combinación de caracteres">ⓘ</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers">Números</label>
+                </div>
+
+                <div class="empty-cell"></div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">Símbolos</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="copy-password-btn" id="mainCopyBtn">Copiar contraseña</button>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
