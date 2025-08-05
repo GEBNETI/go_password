@@ -1,0 +1,35 @@
+# Git files
+.git
+.gitignore
+
+# Documentation
+README.md
+LICENSE
+
+# Development files
+*.log
+*.tmp
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+go_password
+*.exe
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Environment files
+.env
+.env.local
+
+# Test files
+*_test.go
+testdata/

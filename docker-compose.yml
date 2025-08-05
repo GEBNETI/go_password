@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  go_password:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-8090}:${PORT:-8090}"
+    environment:
+      - PORT=${PORT:-8090}
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE

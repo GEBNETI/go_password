@@ -24,9 +24,12 @@ go_password es una aplicación web minimalista para generar contraseñas seguras
 
 ## Requisitos
 
-- Go 1.16 o superior
+- Go 1.16 o superior (para desarrollo)
+- Docker (opcional, para ejecutar con contenedores)
 
 ## Instalación
+
+### Opción 1: Instalación tradicional
 
 1. Clona el repositorio:
 ```bash
@@ -40,6 +43,33 @@ go run main.go
 ```
 
 3. Abre tu navegador en `http://localhost:8090`
+
+### Opción 2: Usando Docker
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/GEBNETI/go_password.git
+cd go_password
+```
+
+2. Construye y ejecuta con Docker:
+```bash
+docker build -t go_password .
+docker run -p 8090:8090 go_password
+```
+
+O usando Docker Compose:
+```bash
+docker-compose up -d
+```
+
+3. Abre tu navegador en `http://localhost:8090`
+
+### Opción 3: Usando la imagen de Docker Hub
+
+```bash
+docker run -p 8090:8090 gebneti/go_password:latest
+```
 
 ## Configuración
 
@@ -56,6 +86,16 @@ O exportando la variable:
 ```bash
 export PORT=3000
 go run main.go
+```
+
+Con Docker:
+```bash
+docker run -p 3000:3000 -e PORT=3000 go_password
+```
+
+Con Docker Compose:
+```bash
+PORT=3000 docker-compose up -d
 ```
 
 ## Uso
@@ -83,7 +123,10 @@ go_password/
 │   └── js/
 │       └── app.js       # Lógica del cliente JavaScript
 ├── README.md            # Este archivo
-└── LICENSE              # Licencia MIT
+├── LICENSE              # Licencia MIT
+├── Dockerfile           # Definición de imagen Docker
+├── docker-compose.yml   # Configuración Docker Compose
+└── .dockerignore        # Archivos ignorados por Docker
 ```
 
 ## API
